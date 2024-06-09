@@ -1,0 +1,76 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+  }
+  
+  .selector {
+    margin-bottom: 20px;
+  }
+  
+  .dice-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 1s;
+  }
+  
+  .dice .side {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    line-height: 100px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Colors for each dice type */
+  .dice.d4 .side { background: green; color: white; }
+  .dice.d6 .side { background: black; color: white; }
+  .dice.d8 .side { background: purple; color: white; }
+  .dice.d10 .side { background: pink; }
+  .dice.d12 .side { background: orange; }
+  .dice.d20 .side { background: blue; color: white; }
+  .dice.d30 .side { background: red; color: white; }
+  
+  /* Styles for D4 */
+  .dice.d4 {
+    transform: rotateX(-35.264deg) rotateY(45deg); /* Adjust for 3D appearance */
+  }
+  
+  .dice.d4 .side {
+    display: none; /* Hide individual faces for D4 */
+  }
+  
+  /* Styles for D6 */
+  .dice.d6 .side.front { transform: rotateY(0deg) translateZ(50px); }
+  .dice.d6 .side.back { transform: rotateY(180deg) translateZ(50px); }
+  .dice.d6 .side.right { transform: rotateY(90deg) translateZ(50px); }
+  .dice.d6 .side.left { transform: rotateY(-90deg) translateZ(50px); }
+  .dice.d6 .side.top { transform: rotateX(90deg) translateZ(50px); }
+  .dice.d6 .side.bottom { transform: rotateX(-90deg) translateZ(50px); }
+  
+  /* Styles for D8 */
+  .dice.d8 .side { /* Add styles for D8 sides */ }
+  /* Add more styles for other dice as needed */
+  
